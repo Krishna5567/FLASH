@@ -2453,6 +2453,369 @@
       color: var(--text-main);
     }
 
+  
+    /* =========================================================
+       FULL CHAT INTERFACE - ATELIER SLEEK TOP BAR & FULL CANVAS
+       ========================================================= */
+    body.chat-mode-active .top-header {
+      display: none !important;
+    }
+
+    body.chat-mode-active #tab-playground {
+      height: 100vh !important;
+      max-height: 100vh !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+
+    body.chat-mode-active .playground-split-layout {
+      height: 100vh !important;
+      max-height: 100vh !important;
+    }
+
+    .sleek-chat-header {
+      height: 52px;
+      min-height: 52px;
+      padding: 0 1.25rem;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      z-index: 15;
+      box-shadow: 0 2px 8px rgba(45, 35, 20, 0.03);
+      position: relative;
+    }
+
+    body.night-mode .sleek-chat-header {
+      background: rgba(20, 19, 17, 0.96);
+      border-bottom-color: #282622;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .chat-header-left, .chat-header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    /* SLEEK MODEL PICKER PILL */
+    .chat-model-selector-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #f7f4ee;
+      border: 1px solid var(--border-light);
+      padding: 0.32rem 0.85rem;
+      border-radius: var(--radius-full);
+      position: relative;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    body.night-mode .chat-model-selector-pill {
+      background: #1e1d1a;
+      border-color: #332f28;
+    }
+
+    .chat-model-selector-pill:hover {
+      border-color: var(--brand-terracotta);
+      box-shadow: 0 2px 8px rgba(207, 92, 54, 0.12);
+    }
+
+    .sleek-model-dropdown {
+      background: transparent;
+      border: none;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      outline: none;
+      padding-right: 0.25rem;
+    }
+
+    body.night-mode .sleek-model-dropdown {
+      color: #f7f4ee;
+    }
+
+    .sleek-model-dropdown option {
+      background: var(--bg-surface);
+      color: var(--text-main);
+    }
+
+    /* ACTION PILLS & ICONS IN HEADER */
+    .btn-chat-pill-action {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.16s ease;
+    }
+
+    body.night-mode .btn-chat-pill-action {
+      background: #23221e;
+      border-color: #332f28;
+      color: #f7f4ee;
+    }
+
+    .btn-chat-pill-action:hover {
+      background: var(--brand-terracotta);
+      border-color: var(--brand-terracotta);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .btn-chat-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.16s ease;
+      position: relative;
+    }
+
+    body.night-mode .btn-chat-icon {
+      background: #23221e;
+      border-color: #332f28;
+      color: #d1cbc1;
+    }
+
+    .btn-chat-icon:hover {
+      background: #f7f4ee;
+      color: var(--brand-terracotta);
+      border-color: var(--brand-terracotta);
+      transform: translateY(-1px);
+    }
+
+    body.night-mode .btn-chat-icon:hover {
+      background: #2c2a25;
+      color: var(--brand-terracotta);
+    }
+
+    /* HEADER TELEMETRY BADGE */
+    .header-live-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(207, 92, 54, 0.08);
+      border: 1px solid rgba(207, 92, 54, 0.2);
+      padding: 0.32rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.74rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--brand-terracotta);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    body.night-mode .header-live-badge {
+      background: rgba(226, 106, 69, 0.14);
+      border-color: rgba(226, 106, 69, 0.3);
+      color: #f28b6d;
+    }
+
+    /* TUNING SETTINGS POPOVER */
+    .options-dropdown-wrap {
+      position: relative;
+    }
+
+    .tuning-popover {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: 310px;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 1.15rem;
+      box-shadow: 0 12px 36px rgba(45, 35, 20, 0.12);
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      animation: popoverFadeIn 0.15s ease-out;
+    }
+
+    body.night-mode .tuning-popover {
+      background: #1e1d1a;
+      border-color: #332f28;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+    }
+
+    @keyframes popoverFadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tuning-popover-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-main);
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    body.night-mode .tuning-popover-title {
+      color: #f7f4ee;
+      border-bottom-color: #2e2b25;
+    }
+
+    .tuning-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    body.night-mode .tuning-row {
+      color: #b5afa4;
+    }
+
+    .tuning-row label {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-weight: 500;
+    }
+
+    .tuning-divider {
+      height: 1px;
+      background: var(--border-light);
+      margin: 0.2rem 0;
+    }
+
+    body.night-mode .tuning-divider {
+      background: #2e2b25;
+    }
+
+    /* FULL CHAT MESSAGES CANVAS */
+    .playground-main-pane {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      height: 100%;
+      min-width: 0;
+      position: relative;
+      background: var(--bg-base);
+    }
+
+    .chat-messages-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.45rem;
+      user-select: text;
+    }
+
+    .message-row {
+      display: flex;
+      gap: 0.9rem;
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .message-row.user {
+      align-self: center;
+      justify-content: flex-end;
+    }
+
+    .message-bubble {
+      max-width: 82%;
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 1rem 1.35rem;
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.68;
+      box-shadow: 0 4px 14px rgba(45, 35, 20, 0.03);
+    }
+
+    .message-row.user .message-bubble {
+      background: #181715;
+      color: #ffffff;
+      border-color: #181715;
+      border-top-right-radius: 4px;
+    }
+
+    body.night-mode .message-row.user .message-bubble {
+      background: #2d2923;
+      border-color: #3e3931;
+      color: #ffffff;
+    }
+
+    /* FIXED USER AVATAR */
+    .message-avatar.user-av {
+      background: #181715;
+      color: #ffffff;
+      border: 1px solid transparent;
+    }
+
+    body.night-mode .message-avatar.user-av {
+      background: #332f28 !important;
+      color: #ffffff !important;
+      border: 1px solid #484339 !important;
+    }
+
+    body.night-mode .message-avatar.user-av i {
+      color: #ffffff !important;
+    }
+
+    /* FLOATING INPUT CONTAINER */
+    .playground-input-container {
+      padding: 0.75rem 1.5rem 1.15rem;
+      background: var(--bg-base);
+      border-top: 1px solid var(--border-light);
+      position: relative;
+      z-index: 10;
+    }
+
+    body.night-mode .playground-input-container {
+      background: var(--bg-base);
+      border-top-color: #24221e;
+    }
+
+    .input-box-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+  
+    /* MAIN SIDEBAR COLLAPSE FOR FULL CHAT EXPERIENCE */
+    .sidebar {
+      transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1), min-width 0.22s cubic-bezier(0.16, 1, 0.3, 1), padding 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body.sidebar-collapsed .sidebar {
+      width: 0px !important;
+      min-width: 0px !important;
+      max-width: 0px !important;
+      padding: 0 !important;
+      border-right: none !important;
+      overflow: hidden !important;
+    }
+
   </style>
 </head>
 <body>
@@ -2522,14 +2885,14 @@
 
         <!-- NAVIGATION TABS -->
         <nav class="nav-menu">
-          <a class="nav-item active" onclick="switchTab('dashboard')">
+          <a class="nav-item" onclick="switchTab('dashboard')">
             <div class="nav-item-left">
               <i class="fa-solid fa-chart-line"></i>
               <span>Dashboard</span>
             </div>
           </a>
 
-          <a class="nav-item" onclick="switchTab('playground')">
+          <a class="nav-item active" onclick="switchTab('playground')">
             <div class="nav-item-left">
               <i class="fa-solid fa-terminal"></i>
               <span>AI Playground</span>
@@ -2707,7 +3070,7 @@
       </div>
 
       <!-- TAB 2: AI PLAYGROUND VIEW (Screenshot 2 Match) -->
-      <div id="tab-playground" class="view-content" style="padding:0; height:calc(100vh - 64px);">
+      <div id="tab-playground" class="view-content active" style="padding:0; height:calc(100vh - 64px);">
         <div class="playground-split-layout">
           
           <!-- LEFT CONVERSATION HISTORY DRAWER (DEVICE ISOLATED & COLLAPSIBLE) -->
@@ -2750,75 +3113,103 @@
           <!-- MAIN PLAYGROUND CHAT PANE -->
           <div class="playground-main-pane">
           
-          <!-- CONTROLS TOOLBAR -->
-          <div class="playground-toolbar">
-            <div class="playground-controls-left">
-              <button class="btn-history-toggle-pill" id="btn-toggle-history-pill" onclick="toggleChatHistorySidebar()" title="Toggle History (Ctrl+H)">
+          <!-- SLEEK SINGLE-ROW FULL CHAT HEADER (48px - ZERO OVERLAP) -->
+          <header class="sleek-chat-header">
+            <div class="chat-header-left">
+              <!-- Toggle Main Navigation Menu -->
+              <button class="btn-chat-icon" id="btn-toggle-main-sidebar" onclick="toggleMainSidebar()" title="Toggle Main Menu">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+
+              <!-- Toggle History Sidebar -->
+              <button class="btn-chat-icon" id="btn-toggle-history-pill" onclick="toggleChatHistorySidebar()" title="Toggle History Sidebar (Ctrl+H)">
                 <i class="fa-solid fa-clock-rotate-left"></i>
-                <span>History</span>
               </button>
-              <div class="control-group">
-                <label>Model:</label>
-                <select id="pg-model" class="control-select">
-                  <option value="fable-5.1" selected>fable-5.1 (Ultra Deep Reasoning - Stealth 3D)</option>
-                  <option value="fable-5">fable-5 (High Speed Turbo - Unlimited)</option>
-                  <option value="claude-3-7-sonnet-20250219">claude-3.7-sonnet (Latest Sonnet)</option>
-                  <option value="claude-3-5-sonnet-20241022">claude-3.5-sonnet (Standard Coding)</option>
-                  <option value="gemini-3.7-flash">gemini-3.7-flash (Latest Flash - Ultra Fast)</option>
-                  <option value="gemini-3-flash-preview">gemini-3-flash-preview (Bulletproof 3D Engine)</option>
+
+              <!-- Sleek Model Picker Pill -->
+              <div class="chat-model-selector-pill" title="Select AI Model">
+                <i class="fa-solid fa-bolt-lightning" style="color:var(--brand-terracotta); font-size:0.85rem;"></i>
+                <select id="pg-model" class="sleek-model-dropdown">
+                  <option value="fable-5.1" selected>fable-5.1 (Ultra Reasoning)</option>
+                  <option value="fable-5">fable-5 (High Speed Turbo)</option>
+                  <option value="claude-3-7-sonnet-20250219">claude-3.7-sonnet</option>
+                  <option value="claude-3-5-sonnet-20241022">claude-3.5-sonnet</option>
+                  <option value="gemini-3.7-flash">gemini-3.7-flash (Ultra Fast)</option>
+                  <option value="gemini-3.5-flash-lite">gemini-3.5-flash-lite (Instant)</option>
                 </select>
+                <i class="fa-solid fa-chevron-down" style="font-size:0.65rem; color:var(--text-dim); pointer-events:none;"></i>
               </div>
 
-              <div class="control-group">
-                <label>Thinking Depth:</label>
-                <select id="pg-thinking" class="control-select">
-                  <option value="default" selected>Default (Smart)</option>
-                  <option value="deep">Deep Reasoning (Coding)</option>
-                  <option value="fast">Fast Response (Instant)</option>
-                </select>
-              </div>
-
-              <label class="checkbox-container">
-                <input type="checkbox" id="pg-streaming" checked>
-                <span>Streaming</span>
-              </label>
-
-              <div class="control-group" style="margin-left: 0.5rem;">
-                <label><i class="fa-solid fa-microphone" style="color:var(--brand-terracotta); font-size:0.8rem;"></i> Voice:</label>
-                <select id="pg-voice-lang" class="control-select" onchange="onVoiceLangChange()">
-                  <option value="en-US" selected>English (US)</option>
-                  <option value="en-IN">English (India)</option>
-                  <option value="en-GB">English (UK)</option>
-                  <option value="hi-IN">Hindi (हिंदी)</option>
-                  <option value="es-ES">Spanish</option>
-                  <option value="fr-FR">French</option>
-                  <option value="de-DE">German</option>
-                  <option value="ja-JP">Japanese</option>
-                  <option value="zh-CN">Chinese</option>
-                </select>
-              </div>
-
-              <label class="checkbox-container" title="Automatically send message after you stop speaking">
-                <input type="checkbox" id="pg-voice-autosend">
-                <span>Auto-Send</span>
-              </label>
-            </div>
-
-            <div>
-              <button class="btn-clear-chat" onclick="clearChat()">
-                <i class="fa-regular fa-trash-can"></i> Clear Chat
+              <!-- New Conversation Button -->
+              <button class="btn-chat-pill-action" onclick="createNewConversation()" title="Start New Conversation">
+                <i class="fa-solid fa-plus"></i>
+                <span>New</span>
               </button>
             </div>
-          </div>
 
-          <!-- STREAM SPEED BAR -->
-          <div class="stream-telemetry-bar">
-            <div class="stream-speed-indicator">
-              <span class="status-dot-pulse" style="width:6px; height:6px;"></span>
-              <span id="telemetry-speed-text">Streaming... ~248.5 tokens/s (12,840 tokens)</span>
+            <div class="chat-header-right">
+              <!-- Live Speed Status Pill -->
+              <div class="header-live-badge" id="header-telemetry-badge" title="Live Engine & Quota Status">
+                <span class="status-dot-pulse" style="width:6px; height:6px;"></span>
+                <span id="telemetry-speed-text">Online (Cloud Active)</span>
+              </div>
+
+              <!-- Tuning / Options Popover Button -->
+              <div class="options-dropdown-wrap">
+                <button class="btn-chat-icon" id="btn-tuning-toggle" onclick="toggleTuningPanel()" title="Chat & Voice Options">
+                  <i class="fa-solid fa-sliders"></i>
+                </button>
+                <div class="tuning-popover" id="tuning-popover" style="display:none;">
+                  <div class="tuning-popover-title">Chat & Voice Settings</div>
+                  <div class="tuning-row">
+                    <label><i class="fa-solid fa-brain" style="color:var(--brand-terracotta);"></i> Thinking Depth:</label>
+                    <select id="pg-thinking" class="control-select" style="padding:0.25rem 0.65rem; font-size:0.78rem;">
+                      <option value="default" selected>Default (Smart)</option>
+                      <option value="deep">Deep Reasoning</option>
+                      <option value="fast">Fast (Instant)</option>
+                    </select>
+                  </div>
+                  <div class="tuning-row">
+                    <label><i class="fa-solid fa-microphone" style="color:var(--brand-terracotta);"></i> Voice Language:</label>
+                    <select id="pg-voice-lang" class="control-select" onchange="onVoiceLangChange()" style="padding:0.25rem 0.65rem; font-size:0.78rem;">
+                      <option value="en-US" selected>English (US)</option>
+                      <option value="en-IN">English (India)</option>
+                      <option value="en-GB">English (UK)</option>
+                      <option value="hi-IN">Hindi (हिंदी)</option>
+                      <option value="es-ES">Spanish</option>
+                      <option value="fr-FR">French</option>
+                      <option value="de-DE">German</option>
+                      <option value="ja-JP">Japanese</option>
+                      <option value="zh-CN">Chinese</option>
+                    </select>
+                  </div>
+                  <div class="tuning-row">
+                    <label><i class="fa-solid fa-tower-broadcast" style="color:var(--brand-terracotta);"></i> Streaming Response:</label>
+                    <input type="checkbox" id="pg-streaming" checked style="accent-color:var(--brand-terracotta);">
+                  </div>
+                  <div class="tuning-row">
+                    <label><i class="fa-solid fa-paper-plane" style="color:var(--brand-terracotta);"></i> Auto-Send Voice:</label>
+                    <input type="checkbox" id="pg-voice-autosend" style="accent-color:var(--brand-terracotta);">
+                  </div>
+                  <div class="tuning-divider"></div>
+                  <div class="tuning-row" style="justify-content:space-between;">
+                    <span style="font-size:0.75rem; color:var(--text-dim);"><i class="fa-solid fa-circle" style="color:var(--brand-terracotta); font-size:0.45rem;"></i> Ping: 24 ms</span>
+                    <button class="btn-action-sm" onclick="copyBaseUrl()" style="padding:3px 10px; font-size:0.75rem;"><i class="fa-regular fa-copy"></i> Base URL</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Clear Chat Button -->
+              <button class="btn-chat-icon" onclick="clearChat()" title="Clear Current Chat">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+
+              <!-- Day / Night Mode Toggle -->
+              <button class="btn-chat-icon" id="theme-toggle-chat-btn" onclick="toggleNightMode()" title="Toggle Day / Night">
+                <i class="fa-solid fa-moon" id="theme-icon-chat"></i>
+              </button>
             </div>
-            <div>Multi-Key Balancing: <span style="color:var(--brand-terracotta); font-weight:700;">Active</span></div>
-          </div>
+          </header>
 
           <!-- CHAT MESSAGES AREA -->
           <div class="chat-messages-area" id="chat-stream">
@@ -2887,7 +3278,7 @@
       </div>
 
       <!-- TAB 3: DASHBOARD VIEW -->
-      <div id="tab-dashboard" class="view-content active">
+      <div id="tab-dashboard" class="view-content">
 
         <!-- ATELIER HERO SHOWCASE (Screenshot Match) -->
         <div class="atelier-hero-card">
@@ -3175,6 +3566,11 @@
     };
 
     function switchTab(tabName) {
+      if (tabName === 'playground') {
+        document.body.classList.add('chat-mode-active');
+      } else {
+        document.body.classList.remove('chat-mode-active');
+      }
       document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
       const activeNav = Array.from(document.querySelectorAll('.nav-item')).find(el => el.getAttribute('onclick')?.includes(`'${tabName}'`));
       if (activeNav) activeNav.classList.add('active');
@@ -3304,6 +3700,26 @@
     }
 
     // AI PLAYGROUND CHAT STREAMING
+    
+    // TUNING POPOVER CONTROLLER
+    function toggleTuningPanel() {
+      const p = document.getElementById('tuning-popover');
+      if (p) {
+        p.style.display = p.style.display === 'none' ? 'flex' : 'none';
+      }
+    }
+
+    // Close tuning popover when clicking outside
+    document.addEventListener('click', (e) => {
+      const popover = document.getElementById('tuning-popover');
+      const btn = document.getElementById('btn-tuning-toggle');
+      if (popover && popover.style.display !== 'none') {
+        if (!popover.contains(e.target) && !btn.contains(e.target)) {
+          popover.style.display = 'none';
+        }
+      }
+    });
+
     function autoExpand(textarea) {
       textarea.style.height = 'auto';
       textarea.style.height = Math.min(textarea.scrollHeight, 120) + 'px';
@@ -3999,9 +4415,11 @@
 
     // INITIAL LOAD
     window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('chat-mode-active');
       initNightMode();
       loadClientKeys();
       loadChatHistory();
+      switchTab("playground");
     });
   
     // =========================================================
@@ -4483,6 +4901,12 @@
       } catch (e) {
         showToast('Failed to rename conversation');
       }
+    }
+
+    
+    function toggleMainSidebar() {
+      const isCollapsed = document.body.classList.toggle('sidebar-collapsed');
+      localStorage.setItem('flash_main_sidebar_collapsed', isCollapsed ? 'true' : 'false');
     }
 
     function toggleChatHistorySidebar() {
